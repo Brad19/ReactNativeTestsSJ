@@ -1,6 +1,5 @@
 import React from 'react';
 import { format } from 'date-fns';
-import { Navigation } from 'react-native-navigation';
 import { Dimensions, Image, View, Text, StyleSheet, TouchableOpacity, ScrollView, SectionList } from 'react-native';
 import UITopBar from '../components/UITopbar';
 import UIListItem from '../components/UIListItem';
@@ -56,9 +55,12 @@ const HomeScreen: React.FC<{ componentId: string, data: readonly [{ backButton: 
                             <UIListItem>
                                 <>
                                     <Text style={{ fontSize: 15, fontWeight: '600' }}>Shift Dates</Text>
-                                    {shifts.map((item) => {
+                                    {shifts.map((item, index) => {
                                         return (
-                                            <Text>{`${format(new Date(item.startDate).getMonth(), 'MMM')} ${format(new Date(item.startDate).getDate(), "hh:mm a")} - Value Not available`}</Text>
+                                            <View key={item + index.toString()}>
+                                                <Text>{`${format(new Date(item.startDate).getMonth(), 'MMM')} ${format(new Date(item.startDate).getDate(), "hh:mm a")} - Value Not available`}</Text>
+                                            </View>
+
                                         )
                                     })}
                                 </>

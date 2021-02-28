@@ -1,17 +1,14 @@
 import { Navigation } from 'react-native-navigation';
 
 
-const push = (componentId: string, componentName: string) => Navigation.push(componentId, {
+export const push = (componentId: string, componentName: string, ...props) => Navigation.push(componentId, {
     component: {
         name: componentName,
-        options: {
-            topBar: {
-                title: {
-                    text: componentName
-                }
-            }
+        passProps: {
+            data: props
         }
-    }
-})
 
-export default push;
+    }
+});
+
+export const pop = (componentId: string) => Navigation.pop(componentId);
