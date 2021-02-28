@@ -22,6 +22,7 @@ const UITopbar: React.FC<{ firstName: string, lastName: string, componentId?: st
     const onPress = () => {
         pop(componentId);
     }
+
     return (
         <View style={[styles.container, { height: statusBarHeight + topBarHeight }]} testID={'Topbar'}>
             {isBackButton && (<TouchableOpacity onPress={onPress}>

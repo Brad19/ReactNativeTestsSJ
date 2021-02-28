@@ -1,5 +1,5 @@
 /**
- * Sample React Native App
+ * React Native App
  * https://github.com/facebook/react-native
  *
  * @format
@@ -17,8 +17,7 @@ import {
 import { push } from './src/navigation/routes';
 import UITopBar from './src/components/UITopbar';
 import { ProfileProps, MatchingJobsProps } from './src/types/types'
-
-const App: () => React$Node = (props) => {
+export default function App(props) {
 
   const [profile, setProfile] = useState<ProfileProps>(null);
   const [matchingJobs, setMatchingJobs] = useState<ReadonlyArray<MatchingJobsProps>>([]);
@@ -33,6 +32,7 @@ const App: () => React$Node = (props) => {
       setMatchingJobs(matchingJobsJson);
 
     }
+
     fetchProfile();
 
   }, [])
@@ -67,7 +67,7 @@ const App: () => React$Node = (props) => {
       {
         profile && matchingJobs.length > 0 && (
           <View style={{ flex: 1 }}>
-            <UITopBar accessibilityLabel={'Topbar'} firstName={profile.firstName} lastName={profile.lastName} />
+            <UITopBar firstName={profile.firstName} lastName={profile.lastName} />
             <View style={styles.body}>
               <FlatList
                 data={matchingJobs}
@@ -84,7 +84,6 @@ const App: () => React$Node = (props) => {
     </>
   )
 };
-
 
 
 const styles = StyleSheet.create({
@@ -106,9 +105,3 @@ const styles = StyleSheet.create({
   }
 
 });
-
-export default App;
-
-{/* <HomeScreen componentId={'Component2'} /> */ }
-{/* <StatusBar barStyle="dark-content" /> */ }
-{/* <UITopBar /> */ }
