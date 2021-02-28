@@ -19,3 +19,8 @@ should take the user to job details screen.
 #### Addition:
 - In addition to do the matching jobs in the first page, i took liberty in completing the job details page as well.
 - Given more time, I could have done more tests.
+
+#### Questions:
+Please let me know if you have any queries regarding the installation
+
+[<img src="https://j.gifs.com/71jolG.gif" height="30%" width="30%">](https://j.gifs.com/71jolG.gif)
